@@ -6,11 +6,10 @@
     /* border: 0 */
     box-sizing: border-box;
 }
-
+/*Creating the grid and making it visible*/
 .wrapper {
     display: grid;
     width: 350px;
-    grid-gap: 5px;
     grid-template-columns: 350px;
     /* grid-template-rows: auto;*/
     grid-template-areas:
@@ -27,6 +26,9 @@
 .header_container {
     grid-area: header;
 }
+.australia {
+    grid-area: australia;
+}
 .kenya {
     grid-area: kenya;
 }
@@ -36,18 +38,22 @@
 .footer_container {
     grid-area: footer;
 }
+.facebook_container {
+    grid-area: facebook;
+}
 .worldmap_container {
     display: none;
 }
 .video_container {
-    grid-area: video;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-
+    display: none}
+.webstat_container {
+    display: none;
+}
+.wagstat_container {
+    display: none;
 }
 .currency_container {
-    grid-area: currency;
+    display: none;
 
 }
 .image {
@@ -78,7 +84,6 @@
             "wagstat wagstat wagstat wagstat currency"
             "footer footer footer footer footer";
         background-color: bisque;
-        margin: 0 auto;
     }
     .worldmap_container {
         grid-area: worldmap;
@@ -89,5 +94,27 @@
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
+    }
+    .webstat_container {
+        grid-area: webstat;
+        display: block;
+    }
+    .wagstat_container {
+        grid-area: wagstat;
+        display: block;
+    }
+    .currency_container {
+        grid-area: currency;
+        display: block;
+    }
+    .country_pair {
+        flex-direction: column;
+    }
+    .video_image {
+        width: 202px;
+    }
+    .fb_image,
+    .cur_image {
+        width: 200px;
     }
 }
