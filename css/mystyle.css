@@ -7,6 +7,38 @@
     box-sizing: border-box;
 }
 
+.wrapper {
+    display: grid;
+    width: 350px;
+    grid-gap: 5px;
+    grid-template-columns: 350px;
+    /* grid-template-rows: auto;*/
+    grid-template-areas:
+        "header"
+        "australia"
+        "kenya"
+        "thailand"
+        "facebook"
+        "footer";
+    background-color: bisque;
+    margin: 0 auto;
+
+}
+.header_container {
+    grid-area: header;
+}
+.kenya {
+    grid-area: kenya;
+}
+.thailand {
+    grid-area: thailand;
+}
+.footer_container {
+    grid-area: footer;
+}
+.worldmap_container {
+    display: none;
+}
 .image {
     max-width: 100%;
 }
@@ -21,4 +53,30 @@
 
 .broadcast_button {
     margin-top: 5px;
+}
+@media only screen and (min-width: 825px) {
+    .wrapper {
+        width: 825px;
+        grid-template-columns: 100px 100px 100px 300px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header header header header"
+            "australia kenya thailand worldmap facebook"
+            "video video video video facebook"
+            "webstat webstat webstat webstat currency"
+            "wagstat wagstat wagstat wagstat currency"
+            "footer footer footer footer footer";
+        background-color: bisque;
+        margin: 0 auto;
+    }
+    .worldmap_container {
+        grid-area: worldmap;
+        display: block;
+    }
+    .video_container {
+        grid-area: video;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
 }
